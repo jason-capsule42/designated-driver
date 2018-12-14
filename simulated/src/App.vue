@@ -45,7 +45,7 @@
       </div>
       <div class="window">
         <div class="camera-feed fullscreen"></div>
-        <dashboard :gauges="activeVehicle.gauges"></dashboard>
+        <dashboard :mode="activeVehicle.mode" :gauges="activeVehicle.gauges"></dashboard>
       </div>
       <div class="window">
         <div class="camera-feed fullscreen">
@@ -103,22 +103,28 @@ export default {
         fuelLevel: 75,
         gauges: [
           {
-            label: 'latency',
+            label: 'Latency',
             value: 0,
             min: 0,
-            max: 1000
+            max: 1000,
+            warnValue: 200,
+            alertValue: 500
           },
           {
-            label: 'speed',
+            label: 'Speed',
             value: 0,
             min: 0,
-            max: 120
+            max: 120,
+            warnValue: 60,
+            alertValue: 80
           },
           {
-            label: 'throttle',
+            label: 'Throttle',
             value: 0,
             min: 0,
-            max: 100
+            max: 100,
+            warnValue: 50,
+            alertValue: 75
           }
         ]
       }
@@ -316,7 +322,7 @@ export default {
     }
   }
 
-  #peak-car-info {
+  #car-info {
     position: absolute;
     bottom: 40px;
     left: 40px;
@@ -339,6 +345,12 @@ export default {
     .button:not(:first-child) {
       margin-left: 10px;
     }
+  }
+
+  #dashboard {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
   }
 
 </style>

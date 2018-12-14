@@ -94,11 +94,9 @@ export default {
 <style lang="scss" scoped>
   $size: 200px;
 
-
-
-
-
   .gauge-wrapper {
+    position: relative;
+
     width: $size;
     height: $size / 2 + 50px;
 
@@ -179,6 +177,7 @@ export default {
 
   .value {
     font-size: 50px;
+    text-align: center;
 
     transform: translateY(-50px);
   }

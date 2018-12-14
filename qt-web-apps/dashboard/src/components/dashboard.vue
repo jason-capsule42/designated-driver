@@ -45,7 +45,7 @@ export default {
     display: flex;
     overflow: hidden;
 
-    transform: translate(-50%);
+    // transform: translate(-50%);
 
     .gauge-wrapper {
       margin: 0 10px;
